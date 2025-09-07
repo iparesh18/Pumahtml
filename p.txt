@@ -1,4 +1,65 @@
-* {
+convert this code , into responsive using media query , html - <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbox">
+        <nav>
+          <div class="nleft">
+            <div class="line"></div>
+          </div>
+          <div class="ncentre">
+            <img src="assets/images/logo.png" alt="" />
+          </div>
+          <div class="nright">
+            <a href="#">SERVICE</a>
+            <a href="#">CONTACT</a>
+          </div>
+        </nav>
+        <div class="navline"></div>
+      </div>
+      <div class="hero">
+        <div class="hleft">
+          <i class="ri-arrow-up-circle-line"></i>
+        </div>
+        <div class="hcenter">
+          <div class="text">
+            <h1>PUMA | <span>FAST FOREVER</span></h1>
+          </div>
+          <img src="assets/images/hero.png" alt="" />
+        </div>
+        <div class="hright"></div>
+      </div>
+      <div class="footer">
+        <div class="fl">
+          <h1>EXPERIENCE.</h1>
+          <h1>PUMA</h1>
+          <h1>SOUL.</h1>
+        </div>
+        <div class="fc">
+          <img src="assets/images/explore.jpeg" alt="" />
+          <p>
+            PUMA fuses sport and style to create bold, performance-driven gear.
+            Designed for speed and built for confidence, our products inspire
+            you to move, play, and live without limits.
+          </p>
+        </div>
+        <div class="fr">
+          <img src="assets/images/explore1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html> , css - * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -26,6 +87,7 @@ body {
 @font-face {
   font-family: "BOLDY";
   src: url("./assets/fonts/BrigendsExpanded-nReK1.otf") format("opentype");
+
   font-style: normal;
 }
 .main {
@@ -67,23 +129,6 @@ nav {
   text-decoration: none;
   color: #fff;
 }
-
-/* Hamburger (hidden by default) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  cursor: pointer;
-}
-.hamburger span {
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
-
-/* Hero */
 .hero {
   width: 100%;
   height: 25vw;
@@ -100,6 +145,7 @@ nav {
 }
 .hleft i {
   font-size: 90px;
+  /* padding-left: 50px; */
 }
 .hcenter {
   width: 60.3%;
@@ -132,14 +178,13 @@ nav {
   top: 15%;
   left: 1%;
 }
+
 .hright {
   width: 50px;
   height: 100%;
   border-left: 50px solid rgba(255, 0, 0, 0.388);
   margin-top: 50px;
 }
-
-/* Footer */
 .footer {
   width: 100%;
   background: linear-gradient(
@@ -174,6 +219,7 @@ nav {
 .fl h1:nth-child(3) {
   font-weight: 100;
 }
+
 .fc {
   width: 500px;
   height: 100px;
@@ -182,6 +228,7 @@ nav {
   justify-content: space-between;
   gap: 90px;
 }
+
 .fc img {
   width: 100px;
   height: 200px;
@@ -196,128 +243,4 @@ nav {
   height: 100%;
   object-fit: cover;
 }
-
-/* =====================
-   Mobile View (One Query)
-   ===================== */
-@media (max-width: 768px) {
-  /* hide left line */
-  .nleft {
-    display: none;
-  }
-  .ncentre img{
-    height: 30px;
-  }
-  /* hide right links */
-  .nright {
-    display: none;
-  }
-
-  /* logo goes left */
-  .ncentre {
-    margin-right: auto;
-  }
-
-  /* show hamburger */
-  .hamburger {
-    display: flex;
-  }
-}
-/* =====================
-   Mobile & Tablet Responsive (≤768px)
-   ===================== */
-@media (max-width: 768px) {
-  /* NAVBAR */
-  .nleft {
-    display: none; /* hide line */
-  }
-
-  .nright {
-    display: none; /* hide links */
-  }
-  .ncentre {
-    margin-right: auto; /* shift logo left */
-  }
-  .hamburger {
-    display: flex; /* show hamburger */
-  }
-
-  /* HERO */
-  .hero {
-    flex-direction: column;
-    height: auto;
-    padding: 30px 15px;
-    gap: 20px;
-  }
-  .hleft {
-    width: 100%;
-    justify-content: center;
-  }
-  .hleft i {
-    font-size: 60px;
-  }
-  .hcenter {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  .hcenter .text {
-    font-size: 22px;
-    margin-bottom: 15px;
-    position: relative;
-    top: auto;
-    white-space: normal;
-    text-align: center;
-  }
-  .hcenter img {
-    height: 220px;
-    position: relative;
-    top: auto;
-    left: auto;
-  }
-  .hright {
-    display: none; /* hide red bar */
-  }
-
-  /* FOOTER */
-  .footer {
-    flex-direction: column;
-    height: auto;
-    padding: 25px 15px;
-    gap: 25px;
-    text-align: center;
-  }
-  .fl {
-    font-size: 20px;
-    align-items: center;
-  }
-  .fc {
-    width: 100%;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .fc img {
-    width: 100px;
-    height: 200px;
-    object-fit: cover;
-    margin-top: 50px;
-  }
-  .fr {
-    width: 100%;
-    /* height: auto; */
-    margin-top: 50px;
-    
-  }
-  .fr img {
-    width: 250px;
-    height: 100px;
-    /* height: auto; */
-    border-radius: 12px;
-    object-fit: cover;
-    margin-top: 20px;
-  }
-}
+, this is desktop view  
